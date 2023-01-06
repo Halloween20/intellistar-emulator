@@ -162,19 +162,13 @@ function fetchRadarImages(){
   scheduleTimeline();
   return;
 
-  radarImage = new Image();
+ radarImage = new Image();
   radarImage.onerror = function () {
     getElement('radar-container').style.display = 'none';
   }
-  radarImage.src = `https://api.wunderground.com/api/${CONFIG.secrets.wundergroundAPIKey}/animatedradar/q/MI/${zipCode}.gif?newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=10&radius=100&num=15&width=1235&height=525&rainsnow=1&smoothing=1&noclutter=1`;
-
-  if(alertsActive){
-    zoomedRadarImage = new Image();
-    zoomedRadarImage.onerror = function () {
-      getElement('zoomed-radar-container').style.display = 'none';
-    }
-    zoomedRadarImage.src = `https://s.w-x.co/staticmaps/wu/wxtype/none/usa/animate.png`;
-  }
-
+  radarImage.src = `https://s.w-x.co/staticmaps/wu/wxtype/none/usa/animate.png`;
+  // Use some hacky workarounds the (almost) 4K size of the imagery
+  radarImage.width = `1235`
+  radarImage.height = `525`
   scheduleTimeline();
 }
