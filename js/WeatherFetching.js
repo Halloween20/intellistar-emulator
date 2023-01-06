@@ -139,7 +139,7 @@ function fetchCurrentWeather(){
               let unit = data.observation[CONFIG.unitField];
               currentTemperature = Math.round(unit.temp);
               currentCondition = data.observation.phrase_32char;
-              windSpeed = `${data.observation.wdir_cardinal} ${unit.wspd} ${CONFIG.units === 'm' ? 'km/h' : 'mph'}`;
+              windSpeed = `${data.observation.wdir_cardinal} ${unit.wspd} ${CONFIG.unit === 'm' ? 'km/h' : 'mph'}`;
               gusts = unit.gust || 'NONE';
               feelsLike = unit.feels_like
               visibility = Math.round(unit.vis)
@@ -162,13 +162,19 @@ function fetchRadarImages(){
   scheduleTimeline();
   return;
 
- radarImage = new Image();
+  radarImage = new Image();
   radarImage.onerror = function () {
     getElement('radar-container').style.display = 'none';
   }
-  radarImage.src = `https://s.w-x.co/staticmaps/wu/wxtype/none/usa/animate.png`;
-  // Use some hacky workarounds the (almost) 4K size of the imagery
-  radarImage.width = `1235`
-  radarImage.height = `525`
+  radarImage.src = `https://api.wunderground.com/api/${CONFIG.secrets.wundergroundAPIKey}/animatedradar/q/MI/${zipCode}.gif?newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=10&radius=100&num=15&width=1235&height=525&rainsnow=1&smoothing=1&noclutter=1`;
+
+  if(alertsActive){
+    zoomedRadarImage = new Image();
+    zoomedRadarImage.onerror = function () {
+      getElement('zoomed-radar-container').style.display = 'none';
+    }
+    zoomedRadarImage.src = `https://api.wunderground.com/api/${CONFIG.secrets.wundergroundAPIKey}/animatedradar/q/MI/${zipCode}.gif?newmaps=1&timelabel=1&timelabel.y=10&num=5&delay=10&radius=50&num=15&width=1235&height=525&rainsnow=1&smoothing=1&noclutter=1`;
+  }
+
   scheduleTimeline();
 }
