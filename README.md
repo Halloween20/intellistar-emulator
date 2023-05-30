@@ -18,7 +18,7 @@ This is a local forecast segment that airs on The Weather Channel called the "Lo
 4. Click start
 5. Press F11 for fullscreen
 
-## Featurea
+## Features radar, Weather alerts
 
 ## Looping
 To enable or disable looping, click on the TWC logo in the info-bar in the top-left corner of the emulator.
