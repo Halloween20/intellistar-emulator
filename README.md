@@ -14,7 +14,7 @@ This is a local forecast segment that airs on The Weather Channel called the "Lo
 ## Option 2 (more customizable)
 1. Extract all contents into folder
 2. Run index.html in Google Chrome
-3. Enter zip code
+3. Enter zip code 32504
 4. Click start
 5. Press F11 for fullscreen
 
