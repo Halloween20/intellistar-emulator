@@ -18,10 +18,7 @@ This is a local forecast segment that airs on The Weather Channel called the "Lo
 4. Click start
 5. Press F11 for fullscreen
 
-## Features
-Most of core animation and logic has been replicated including severe weather alerts, forecast descriptions, crawl text, and the Doppler radar map.
-
-*Some of these features are temporarily not working due to the discontinuation of WU's API*
+## Featurea
 
 ## Looping
 To enable or disable looping, click on the TWC logo in the info-bar in the top-left corner of the emulator.
