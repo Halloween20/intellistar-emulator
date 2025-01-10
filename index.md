@@ -11,9 +11,9 @@ Markdown is a lightweight and easy-to-use syntax for styling your writing. It in
 ```markdown
 Syntax highlighted code block
 
-# Header 1
-## Header 2
-### Header 3
+# Currently in our area 20 Degrees With Snow
+## Tonight Snow Chance of Snow 100% Low 16
+### Tomorow Sunny High 60F. Winds NNE at 2 to 10 mph.
 
 - Bulleted
 - List
